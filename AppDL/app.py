@@ -280,11 +280,11 @@ if page == "home":
 </div>
 """, unsafe_allow_html=True)
     
-    st.image(
-        "/assets/images/vacasola.jpeg",
-        caption="No todo en la vida es bueno, por eso:",
-        use_container_width=True
-    )
+    #st.image(
+     #   "/assets/images/vacasola.jpeg",
+      #  caption="No todo en la vida es bueno, por eso:",
+       # use_container_width=True
+    #)
 
     st.markdown("""
 <div class="card-explain">
@@ -1522,6 +1522,7 @@ Antes del boom de Transformers, las LSTM eran las reinas absolutas del NLP.
         st.experimental_set_query_params(page="home")
 
     st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
