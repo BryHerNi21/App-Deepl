@@ -281,7 +281,7 @@ if page == "home":
 """, unsafe_allow_html=True)
     
     st.image(
-        "assets/images/vacasola.jpeg",
+        "/assets/images/vacasola.jpeg",
         caption="No todo en la vida es bueno, por eso:",
         use_container_width=True
     )
@@ -1522,4 +1522,5 @@ Antes del boom de Transformers, las LSTM eran las reinas absolutas del NLP.
         st.experimental_set_query_params(page="home")
 
     st.markdown('</div>', unsafe_allow_html=True)
+
 
