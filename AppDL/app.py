@@ -1148,7 +1148,7 @@ para ver qué tan parecidas son matemáticamente.
     @st.cache_resource
     def load_glove():
         embedding_index = {}
-        glove_path = "embeddings_25mb.txt"
+        glove_path = "assets/texts/embeddings_25mb.txt"
         if os.path.exists(glove_path):
             with open(glove_path, encoding="utf-8") as f:
                 for line in f:
@@ -1514,6 +1514,7 @@ Antes del boom de Transformers, las LSTM eran las reinas absolutas del NLP.
         st.experimental_set_query_params(page="home")
 
     st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
