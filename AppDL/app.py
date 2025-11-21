@@ -254,7 +254,7 @@ if page == "home":
 
 
     st.image(
-        "gatosentado.jpeg",
+        "assets/images/gatosentado.jpeg",
         caption="Sienténse y tomen nota, vamos a ser como este gato",
         use_container_width=True
     )
@@ -281,7 +281,7 @@ if page == "home":
 """, unsafe_allow_html=True)
     
     st.image(
-        "vacasola.jpeg",
+        "assets/images/vacasola.jpeg",
         caption="No todo en la vida es bueno, por eso:",
         use_container_width=True
     )
@@ -524,7 +524,7 @@ que se volvió la estrella del texto (y ahora también de imágenes, audio, etc.
 Ese “ponerle cuidado” es lo que se conoce como **auto-atención** (*self-attention*).
     """)
     st.image(
-        "monopensando.jpeg"
+        "assets/images/monopensando.jpeg"
     )
 
     st.subheader("¿Qué hace exactamente la auto-atención?")
@@ -550,7 +550,7 @@ Por eso a los Transformers se les da tan bien entender contexto.
 
     st.subheader("¿Por qué los Transformers cambiaron el juego?")
     st.image(
-        "mapache alabando.jpeg"
+        "assets/images/mapache alabando.jpeg"
     )
     st.markdown("""
 Antes se usaban RNN y LSTM, que:
@@ -1520,4 +1520,5 @@ Antes del boom de Transformers, las LSTM eran las reinas absolutas del NLP.
     st.markdown('<div class="volver-btn">', unsafe_allow_html=True)
     if st.button("⬅ Volver a Mundo Deep"):
         st.experimental_set_query_params(page="home")
+
     st.markdown('</div>', unsafe_allow_html=True)
