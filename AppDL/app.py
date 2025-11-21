@@ -9,199 +9,191 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* Primer contenedor */
-.block-container {
-    max-width: 1000px;
-    padding-top: 1.5rem;
-    padding-bottom: 3rem;
-    margin: 0 auto;
-}
+    /* ============================
+       ESTILOS GLOBALES DE TEXTO
+       ============================ */
 
-/* Fondo blanco */
-.stApp {
-    background-color: #ffffff;
-}
+    /* Texto normal en negro/gris */
+    body, p, span, div, li, ul, ol, h1, h2, h3, h4, h5, h6,
+    .stMarkdown, .stText, .stHeader, .stSubtitle, .stDataFrame,
+    .stAppViewContainer, .st-emotion-cache-3w2f2m, .st-emotion-cache-1wqrzgl {
+        color: #1f2933 !important;  /* gris oscuro */
+    }
 
-/* Hero */
-.hero-box {
-    background: radial-gradient(circle at top left, #e0f2ff, #f7fbff);
-    border-radius: 24px;
-    padding: 32px 30px;
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    margin-bottom: 26px;
-}
+    /* Los LABELS de inputs */
+    label, .stSelectbox label, .stTextInput label {
+        color: #1f2933 !important;
+    }
 
-.hero-title {
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: #102a43;
-    margin-bottom: 0.3rem;
-}
+    /* Texto dentro de tarjetas Streamlit默认 */
+    .stColumn, .stContainer, .css-ffhzg2, .css-1kyxreq {
+        color: #1f2933 !important;
+    }
 
-.hero-subtitle {
-    font-size: 1.05rem;
-    color: #334e68;
-    max-width: 680px;
-}
+    /* Evitar que el color se aplique al código */
+    code, pre, .stCodeBlock, .stMarkdown code {
+        color: inherit !important;
+        background-color: inherit !important; /* no tocar */
+    }
 
-.tag-chip {
-    display: inline-block;
-    background-color: #dbeafe;
-    color: #1d4ed8;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    margin-bottom: 8px;
-}
 
-/* Tarjeta explicativa */
-.card-explain {
-    background: #ffffff;
-    border-radius: 18px;
-    border: 1px solid #e2e8f0;
-    padding: 18px 20px;
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
-    margin-bottom: 24px;
-    font-size: 0.98rem;
-    color: #1f2933;
-}
+    /* ============================
+       TU ESTILO ORIGINAL
+       ============================ */
 
-.section-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1f3b5d;
-    margin-top: 10px;
-    margin-bottom: 6px;
-}
+    .block-container {
+        max-width: 1000px;
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
+        margin: 0 auto;
+    }
 
-.custom-list li {
-    margin-bottom: 4px;
-}
+    .stApp {
+        background-color: #ffffff;
+    }
 
-img {
-    border-radius: 18px;
-}
-/*Las tarjetas de transformers*/
-.topic-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5rem;          /* <-- más espacio horizontal y vertical */
-    margin-top: 2.2rem;
-    margin-bottom: 2.5rem;
-}
+    .hero-box {
+        background: radial-gradient(circle at top left, #e0f2ff, #f7fbff);
+        border-radius: 24px;
+        padding: 32px 30px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+        margin-bottom: 26px;
+    }
 
-/* Tarjeta base: fondo clarito, texto oscuro */
-.topic-card {
-    width: 260px;
-    background: #f9fafb;                       /* fondo gris muy suave */
-    border-radius: 18px;
-    padding: 18px 18px 16px 18px;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
-    text-decoration: none !important;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
-}
+    .hero-title {
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: #102a43;
+        margin-bottom: 0.3rem;
+    }
 
-/* Variantes de color: borde lateral y fondo un poquito tintado */
-.card-transformers {
-    background: #e0f2fe;                       /* azul muy suave */
-    border-left: 6px solid #3b82f6;
-}
-.card-callbacks {
-    background: #ede9fe;                       /* lila muy suave */
-    border-left: 6px solid #a855f7;
-}
-            
-.card-regularizacion {
-    background: #F5E6F5;                       /* lila muy suave */
-    border-left: 6px solid #FF3DFF;
-}
+    .hero-subtitle {
+        font-size: 1.05rem;
+        color: #334e68;
+        max-width: 680px;
+    }
 
-.card-LSTM {
-    background: #ECFFEB;                       /* lila muy suave */
-    border-left: 6px solid #4AFF3D;
-}
+    .tag-chip {
+        display: inline-block;
+        background-color: #dbeafe;
+        color: #1d4ed8;
+        padding: 4px 10px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        margin-bottom: 8px;
+    }
 
-.card-rna {
-    background: #FFEBEB;                       /* lila muy suave */
-    border-left: 6px solid #FF0000;
-}
-            
-.card-perceptron {
-    background: #FFFAF2;                       /* lila muy suave */
-    border-left: 6px solid #FF8C00;
-}
-            
-.card-embedding {
-    background: #F0FFFF;                       /* lila muy suave */
-    border-left: 6px solid #00FFFA;
-}
+    .card-explain {
+        background: #ffffff;
+        border-radius: 18px;
+        border: 1px solid #e2e8f0;
+        padding: 18px 20px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+        margin-bottom: 24px;
+        font-size: 0.98rem;
+        color: #1f2933;
+    }
 
-/* Cabecera de la tarjeta */
-.topic-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    .section-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1f3b5d;
+        margin-top: 10px;
+        margin-bottom: 6px;
+    }
 
-/* Icono redondo */
-.topic-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.35rem;
-    background: #ffffff55;
-}
+    img {
+        border-radius: 18px;
+    }
 
-/* Texto: AHORA ES OSCURO, NO BLANCO */
-.topic-title-text {
-    font-weight: 700;
-    color: #111827;
-    font-size: 1.05rem;
-}
-.topic-desc {
-    font-size: 0.9rem;
-    color: #374151;
-}
+    .topic-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5rem;
+        margin-top: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
 
-.topic-footer {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #1d4ed8;
-}
+    .topic-card {
+        width: 260px;
+        background: #f9fafb;
+        border-radius: 18px;
+        padding: 18px 18px 16px 18px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+        text-decoration: none !important;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    }
 
-/* Hover suave */
-.topic-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 26px rgba(15, 23, 42, 0.14);
-    border-color: #bfdbfe;
-}
+    .card-transformers { background: #e0f2fe; border-left: 6px solid #3b82f6; }
+    .card-callbacks    { background: #ede9fe; border-left: 6px solid #a855f7; }
+    .card-regularizacion { background: #F5E6F5; border-left: 6px solid #FF3DFF; }
+    .card-LSTM         { background: #ECFFEB; border-left: 6px solid #4AFF3D; }
+    .card-rna          { background: #FFEBEB; border-left: 6px solid #FF0000; }
+    .card-perceptron   { background: #FFFAF2; border-left: 6px solid #FF8C00; }
+    .card-embedding    { background: #F0FFFF; border-left: 6px solid #00FFFA; }
 
-/* Quitar subrayado y azul horrible de link */
-.topic-card:link,
-.topic-card:visited,
-.topic-card:hover,
-.topic-card:active {
-    text-decoration: none !important;
-    color: inherit !important;
-}
+    .topic-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-/* Botón volver */
-.volver-btn button {
-    border-radius: 999px !important;
-}
+    .topic-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.35rem;
+        background: #ffffff55;
+    }
+
+    .topic-title-text {
+        font-weight: 700;
+        color: #111827;
+        font-size: 1.05rem;
+    }
+
+    .topic-desc {
+        font-size: 0.9rem;
+        color: #374151;
+    }
+
+    .topic-footer {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #1d4ed8;
+    }
+
+    .topic-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 26px rgba(15, 23, 42, 0.14);
+        border-color: #bfdbfe;
+    }
+
+    .topic-card:link,
+    .topic-card:visited,
+    .topic-card:hover,
+    .topic-card:active {
+        text-decoration: none !important;
+        color: inherit !important;
+    }
+
+    .volver-btn button {
+        border-radius: 999px !important;
+    }
 
 </style>
 """, unsafe_allow_html=True)
+
 
 
 
@@ -1522,6 +1514,7 @@ Antes del boom de Transformers, las LSTM eran las reinas absolutas del NLP.
         st.experimental_set_query_params(page="home")
 
     st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
