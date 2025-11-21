@@ -523,9 +523,9 @@ que se volvió la estrella del texto (y ahora también de imágenes, audio, etc.
 
 Ese “ponerle cuidado” es lo que se conoce como **auto-atención** (*self-attention*).
     """)
-    st.image(
-        "assets/images/monopensando.jpeg"
-    )
+    #st.image(
+     #   "assets/images/monopensando.jpeg"
+    #)
 
     st.subheader("¿Qué hace exactamente la auto-atención?")
     st.markdown("""
@@ -549,9 +549,9 @@ Por eso a los Transformers se les da tan bien entender contexto.
     """)
 
     st.subheader("¿Por qué los Transformers cambiaron el juego?")
-    st.image(
-        "assets/images/mapache alabando.jpeg"
-    )
+   # st.image(
+    #    "assets/images/mapache alabando.jpeg"
+    #)
     st.markdown("""
 Antes se usaban RNN y LSTM, que:
 
@@ -1522,6 +1522,7 @@ Antes del boom de Transformers, las LSTM eran las reinas absolutas del NLP.
         st.experimental_set_query_params(page="home")
 
     st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
