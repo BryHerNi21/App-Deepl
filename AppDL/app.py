@@ -253,11 +253,11 @@ if page == "home":
 
 
 
-    st.image(
-        "assets/images/gatosentado.jpeg",
-        caption="Sienténse y tomen nota, vamos a ser como este gato",
-        use_container_width=True
-    )
+    #st.image(
+     #   "assets/images/gatosentado.jpeg",
+      #  caption="Sienténse y tomen nota, vamos a ser como este gato",
+       # use_container_width=True
+    #)
  
     st.markdown("""
 <div class="card-explain">
@@ -1522,6 +1522,7 @@ Antes del boom de Transformers, las LSTM eran las reinas absolutas del NLP.
         st.experimental_set_query_params(page="home")
 
     st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 
